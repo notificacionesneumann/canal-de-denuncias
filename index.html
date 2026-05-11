@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canal de Ética y Denuncias - Neumann</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'neumann-orange': '#FF7A00', /* Naranja del Logo */
+                        'neumann-gray': '#D1D5DB',   /* Gris claro del Logo */
+                        'neumann-gray-dark': '#9CA3AF', /* Gris un poco más oscuro para legibilidad */
+                        'neumann-text': '#374151'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        /* Ocultar elementos para transiciones suaves */
+        .hidden-transition {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+        .show-transition {
+            display: block;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-neumann-text font-sans antialiased selection:bg-neumann-orange selection:text-white">
+
+    <!-- Header / Logo Area -->
+    <header class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex items-center justify-between">
+            <div class="flex flex-col items-start">
+                <!-- Recreación tipográfica del Logo Neumann -->
+                <div class="flex items-baseline">
+                    <span class="text-neumann-orange font-bold text-4xl tracking-tighter">NEU</span>
+                    <span class="text-neumann-gray-dark font-bold text-4xl tracking-tighter">mann</span>
+                </div>
+                <span class="text-neumann-gray-dark text-[0.65rem] tracking-[0.2em] font-semibold uppercase mt-0.5">
+                    Plantas y Equipos Térmicos
+                </span>
+            </div>
+            <div class="hidden sm:flex items-center text-sm font-medium text-gray-500">
+                <i data-lucide="shield-check" class="w-5 h-5 text-neumann-orange mr-2"></i>
+                Canal Confidencial
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        
+        <!-- Título Principal -->
+        <div class="text-center max-w-3xl mx-auto mb-12">
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Canal de Ética y Denuncias</h1>
+            <p class="text-lg text-gray-600">Compromiso de Integridad y Confidencialidad</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            
+            <!-- Columna Izquierda: Información y Promesas -->
+            <div class="lg:col-span-1 space-y-6">
+                
+                <!-- Intro Card -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                    <p class="text-sm text-gray-600 leading-relaxed mb-4">
+                        En <strong class="text-gray-900">Neumann</strong>, valoramos la transparencia y la ética como pilares de nuestra cultura. Este espacio ha sido creado para que puedas reportar de manera segura cualquier comportamiento que contravenga nuestro Código de Ética, políticas internas o la ley (como casos de acoso, fraude, robo o conflictos de interés).
+                    </p>
+                    <div class="p-4 bg-orange-50 rounded-lg border border-orange-100">
+                        <div class="flex items-center mb-2">
+                            <i data-lucide="user-x" class="w-5 h-5 text-neumann-orange mr-2"></i>
+                            <h3 class="font-semibold text-gray-900 text-sm">Garantía de Anonimato</h3>
+                        </div>
+                        <p class="text-xs text-gray-700 leading-relaxed">
+                            Este formulario está diseñado para protegerte. No recopilamos tu dirección de correo, nombre, ni rastreamos tu dirección IP a menos que tú decidas compartirlo.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Promesas -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                    <h3 class="font-bold text-gray-900 mb-4 flex items-center">
+                        <i data-lucide="star" class="w-5 h-5 text-neumann-orange mr-2 fill-orange-50"></i>
+                        Nuestras Promesas
+                    </h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 mt-0.5">
+                                <i data-lucide="shield" class="w-4 h-4 text-neumann-orange"></i>
+                            </div>
+                            <div class="ml-3">
+                                <h4 class="text-sm font-semibold text-gray-900">No Represalias</h4>
+                                <p class="text-xs text-gray-600 mt-1">Garantizamos que no habrá consecuencias negativas por realizar una denuncia de buena fe.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 mt-0.5">
+                                <i data-lucide="scale" class="w-4 h-4 text-neumann-orange"></i>
+                            </div>
+                            <div class="ml-3">
+                                <h4 class="text-sm font-semibold text-gray-900">Investigación Imparcial</h4>
+                                <p class="text-xs text-gray-600 mt-1">Cada reporte será revisado por el Comité de Ética bajo estrictos estándares de objetividad.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 mt-0.5">
+                                <i data-lucide="lock" class="w-4 h-4 text-neumann-orange"></i>
+                            </div>
+                            <div class="ml-3">
+                                <h4 class="text-sm font-semibold text-gray-900">Uso de la Información</h4>
+                                <p class="text-xs text-gray-600 mt-1">Los datos proporcionados se utilizarán exclusivamente para fines de investigación interna.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Columna Derecha: Formulario -->
+            <div class="lg:col-span-2">
+                <div class="bg-white p-6 md:p-8 rounded-2xl shadow-lg border border-gray-100 relative overflow-hidden">
+                    
+                    <!-- Formulario -->
+                    <form id="denunciaForm" class="space-y-6">
+                        
+                        <!-- Instrucciones -->
+                        <div class="bg-blue-50 text-blue-800 p-4 rounded-xl text-sm mb-6 border border-blue-100 flex items-start">
+                            <i data-lucide="info" class="w-5 h-5 mr-3 flex-shrink-0 mt-0.5"></i>
+                            <p>
+                                <strong>Instrucciones:</strong> Por favor, aporta la mayor cantidad de detalles posible para facilitar nuestra labor. Si decides no proporcionar un medio de contacto, te sugerimos estar atento a futuros comunicados generales.
+                            </p>
+                        </div>
+
+                        <!-- Tipo de Denuncia -->
+                        <div>
+                            <label for="tipo_denuncia" class="block text-sm font-medium text-gray-700 mb-1">Tipo de irregularidad a reportar <span class="text-red-500">*</span></label>
+                            <select id="tipo_denuncia" name="tipo_denuncia" required class="w-full rounded-lg border-gray-300 shadow-sm focus:border-neumann-orange focus:ring-neumann-orange bg-gray-50 border p-3 outline-none transition-colors">
+                                <option value="" disabled selected>Seleccione una opción...</option>
+                                <option value="acoso">Acoso (Laboral, Sexual, etc.)</option>
+                                <option value="fraude">Fraude o Malversación</option>
+                                <option value="robo">Robo de Activos o Información</option>
+                                <option value="conflicto_interes">Conflicto de Interés</option>
+                                <option value="corrupcion">Soborno o Corrupción</option>
+                                <option value="seguridad">Incumplimiento de Normas de Seguridad</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+
+                        <!-- Detalles del Evento (Grid) -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="fecha" class="block text-sm font-medium text-gray-700 mb-1">Fecha aproximada de los hechos</label>
+                                <input type="date" id="fecha" name="fecha" class="w-full rounded-lg border-gray-300 shadow-sm focus:border-neumann-orange focus:ring-neumann-orange bg-gray-50 border p-3 outline-none transition-colors">
+                            </div>
+                            <div>
+                                <label for="lugar" class="block text-sm font-medium text-gray-700 mb-1">Lugar (Sucursal, área, etc.)</label>
+                                <input type="text" id="lugar" name="lugar" placeholder="Ej. Planta principal, Oficina central..." class="w-full rounded-lg border-gray-300 shadow-sm focus:border-neumann-orange focus:ring-neumann-orange bg-gray-50 border p-3 outline-none transition-colors">
+                            </div>
+                        </div>
+
+                        <!-- Personas Involucradas -->
+                        <div>
+                            <label for="personas" class="block text-sm font-medium text-gray-700 mb-1">Personas involucradas (Si las conoce)</label>
+                            <input type="text" id="personas" name="personas" placeholder="Nombres, cargos o descripciones..." class="w-full rounded-lg border-gray-300 shadow-sm focus:border-neumann-orange focus:ring-neumann-orange bg-gray-50 border p-3 outline-none transition-colors">
+                        </div>
+
+                        <!-- Descripción Detallada -->
+                        <div>
+                            <label for="descripcion" class="block text-sm font-medium text-gray-700 mb-1">Descripción de los hechos <span class="text-red-500">*</span></label>
+                            <textarea id="descripcion" name="descripcion" rows="5" required placeholder="Describe con el mayor detalle posible lo sucedido. ¿Qué pasó? ¿Cómo sucedió? ¿Cuándo? ¿Hay testigos?" class="w-full rounded-lg border-gray-300 shadow-sm focus:border-neumann-orange focus:ring-neumann-orange bg-gray-50 border p-3 outline-none transition-colors resize-y"></textarea>
+                        </div>
+
+                        <!-- Separador -->
+                        <hr class="border-gray-200">
+
+                        <!-- Anonimato Toggle -->
+                        <div>
+                            <label class="block text-sm font-medium text-gray-900 mb-3">¿Deseas proporcionar tus datos de contacto? (Opcional)</label>
+                            <div class="space-y-3">
+                                <label class="flex items-center cursor-pointer">
+                                    <input type="radio" name="anonimato" value="anonimo" checked class="w-4 h-4 text-neumann-orange bg-gray-100 border-gray-300 focus:ring-neumann-orange focus:ring-2">
+                                    <span class="ml-3 text-sm text-gray-700">No, prefiero mantener mi denuncia 100% anónima.</span>
+                                </label>
+                                <label class="flex items-center cursor-pointer">
+                                    <input type="radio" name="anonimato" value="contacto" class="w-4 h-4 text-neumann-orange bg-gray-100 border-gray-300 focus:ring-neumann-orange focus:ring-2">
+                                    <span class="ml-3 text-sm text-gray-700">Sí, estoy dispuesto/a a proporcionar mis datos para que me contacten.</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Campos de Contacto Ocultos -->
+                        <div id="campos_contacto" class="hidden-transition bg-gray-50 p-4 rounded-xl border border-gray-200 grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="md:col-span-2">
+                                <p class="text-xs text-gray-500 mb-3"><i data-lucide="lock" class="w-3 h-3 inline mr-1"></i>Tus datos serán tratados con estricta confidencialidad.</p>
+                            </div>
+                            <div>
+                                <label for="nombre" class="block text-sm font-medium text-gray-700 mb-1">Nombre completo</label>
+                                <input type="text" id="nombre" name="nombre" class="w-full rounded-lg border-gray-300 shadow-sm focus:border-neumann-orange focus:ring-neumann-orange bg-white border p-3 outline-none">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Correo electrónico</label>
+                                <input type="email" id="email" name="email" class="w-full rounded-lg border-gray-300 shadow-sm focus:border-neumann-orange focus:ring-neumann-orange bg-white border p-3 outline-none">
+                            </div>
+                            <div class="md:col-span-2">
+                                <label for="telefono" class="block text-sm font-medium text-gray-700 mb-1">Teléfono (Opcional)</label>
+                                <input type="tel" id="telefono" name="telefono" class="w-full rounded-lg border-gray-300 shadow-sm focus:border-neumann-orange focus:ring-neumann-orange bg-white border p-3 outline-none">
+                            </div>
+                        </div>
+
+                        <!-- Botón Enviar -->
+                        <div class="pt-4">
+                            <button type="submit" id="submitBtn" class="w-full flex justify-center items-center py-3.5 px-4 border border-transparent rounded-xl shadow-sm text-sm font-bold text-white bg-neumann-orange hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-neumann-orange transition-all duration-200">
+                                <i data-lucide="send" class="w-4 h-4 mr-2"></i>
+                                Enviar Denuncia de Forma Segura
+                            </button>
+                        </div>
+                    </form>
+
+                    <!-- Mensaje de Éxito (Oculto por defecto) -->
+                    <div id="successMessage" class="hidden absolute inset-0 bg-white z-10 flex flex-col items-center justify-center p-8 text-center">
+                        <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mb-6">
+                            <i data-lucide="check-circle" class="w-10 h-10 text-green-500"></i>
+                        </div>
+                        <h2 class="text-2xl font-bold text-gray-900 mb-2">Denuncia Registrada con Éxito</h2>
+                        <p class="text-gray-600 mb-6 max-w-md">
+                            Gracias por tu valentía y por ayudarnos a mantener la integridad en Neumann. Tu reporte ha sido encriptado y enviado al Comité de Ética.
+                        </p>
+                        <button onclick="window.location.reload()" class="py-2.5 px-6 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 transition-colors">
+                            Volver al inicio
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-8 text-center text-sm border-t border-gray-800 mt-12">
+        <div class="max-w-5xl mx-auto px-4">
+            <p>&copy; <span id="year"></span> Neumann - Plantas y Equipos Térmicos. Todos los derechos reservados.</p>
+            <p class="mt-2 text-xs">Este es un canal de comunicación confidencial e independiente.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts de Lógica -->
+    <script>
+        // Inicializar Iconos
+        lucide.createIcons();
+        
+        // Año actual en el footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Lógica para mostrar/ocultar campos de contacto
+        const radioAnonimo = document.querySelector('input[value="anonimo"]');
+        const radioContacto = document.querySelector('input[value="contacto"]');
+        const camposContacto = document.getElementById('campos_contacto');
+
+        function toggleContacto() {
+            if (radioContacto.checked) {
+                camposContacto.classList.remove('hidden-transition');
+                camposContacto.classList.add('show-transition');
+                // Hacer los campos obligatorios si elige dejar contacto
+                document.getElementById('nombre').required = true;
+                document.getElementById('email').required = true;
+            } else {
+                camposContacto.classList.remove('show-transition');
+                camposContacto.classList.add('hidden-transition');
+                // Quitar requerimiento
+                document.getElementById('nombre').required = false;
+                document.getElementById('email').required = false;
+                // Limpiar valores
+                document.getElementById('nombre').value = '';
+                document.getElementById('email').value = '';
+                document.getElementById('telefono').value = '';
+            }
+        }
+
+        radioAnonimo.addEventListener('change', toggleContacto);
+        radioContacto.addEventListener('change', toggleContacto);
+
+        // Lógica de envío del formulario
+        const form = document.getElementById('denunciaForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const successMessage = document.getElementById('successMessage');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault(); // Evita que la página recargue
+            
+            // Cambiar estado del botón a cargando
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg> Procesando de forma segura...';
+            submitBtn.disabled = true;
+            submitBtn.classList.add('opacity-75', 'cursor-not-allowed');
+
+            /* * NOTA PARA EL DESARROLLADOR:
+             * Para que esto llegue a "gneumann@neumann.cl" de forma REAL y ANÓNIMA,
+             * no puedes usar "mailto:" en HTML (eso abriría el correo del usuario y revelaría quién es).
+             * * Debes conectar esto a un servicio como Formspree, EmailJS o un backend propio (PHP/Node).
+             * * Ejemplo con Formspree:
+             * 1. Crea cuenta en Formspree con gneumann@neumann.cl
+             * 2. Te darán una URL (ej: https://formspree.io/f/xabcdabc)
+             * 3. Descomenta el código de abajo (fetch) y reemplaza la URL.
+             */
+
+            // --- SIMULACIÓN DE ENVÍO PARA LA DEMOSTRACIÓN (Espera 2 segundos) ---
+            setTimeout(() => {
+                // Ocultar form, mostrar éxito
+                successMessage.classList.remove('hidden');
+                form.style.opacity = '0'; // Oculta visualmente el form de fondo
+            }, 1500);
+
+            /* --- CÓDIGO REAL PARA ENVIAR CORREO (Descomentar para usar en producción) ---
+            
+            const formData = new FormData(form);
+            fetch('https://formspree.io/f/TU_ID_DE_FORMSPREE', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    successMessage.classList.remove('hidden');
+                    form.style.opacity = '0';
+                } else {
+                    alert("Hubo un problema al enviar la denuncia. Por favor intente más tarde.");
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                    submitBtn.classList.remove('opacity-75', 'cursor-not-allowed');
+                }
+            }).catch(error => {
+                alert("Error de conexión al enviar el formulario.");
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+                submitBtn.classList.remove('opacity-75', 'cursor-not-allowed');
+            });
+            
+            ------------------------------------------------------------------------- */
+        });
+    </script>
+</body>
+</html>
